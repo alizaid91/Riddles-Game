@@ -14,21 +14,33 @@
 
     <div class="main">
         <div class="score-container">
-            <!-- <p id="score-title">SCORE</p> -->
-            <p id="score">150</p>
+            <p id="score">0</p>
         </div>
         <div class="wrapper">
         <div class="content">
         <p id="level-riddle">Lv.1 Riddle.1</p>
-        <p id="riddle">I’m tall when I’m young, and I’m short when I’m old. What am I?</p>
+        <p id="riddle">What begins with an 'e' and only contains one letter?</p>
         <input id="type-answer" type="text" placeholder="Type your answer">
-        <button id="check-answer-btn">Check</button>
+        <button id="check-answer-btn" onclick="checkAnswer()">Check</button>
     </div>
     </div>
     <div  id="hint-icon">
-        <i class="fa-solid fa-lightbulb"></i>
+        <i class="fa-solid fa-lightbulb" onclick="showHint()"></i>
     </div>
-    <i class="fa-solid fa-volume-high"></i>
+    <i class="fa-solid fa-volume-high" onclick="readText()"></i>
+    </div>
+    <div class="hint-container" id="hint-popup">
+        <h1 id="hint-title">Hint</h1>
+        <span onclick="closeHint()" id="close-hint-btn">&times;</span>
+        <p id="hint-text">Think about something that typically starts tall but becomes shorter as it ages.</p>
+    </div>
+    <div class="correct-answer-container" id="correct-answer-popup">
+        <div class="correct-answer-content">
+            <div class="xyz">
+        <p class="conguratulation-msg">Correct!</p>
+        <button id="next-riddle-btn" onclick="nextRiddle()">Next</button>
+    </div>
+    </div>
     </div>
     <script src="app.js"></script>
 </body>
