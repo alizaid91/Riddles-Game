@@ -140,7 +140,7 @@ align-items: center;
 }
 
 .hint-wrapper.inactive{
-  opacity: 0;
+  display: block;
   animation: fadeOut 2s ease forwards;
 }
 
@@ -162,7 +162,7 @@ align-items: center;
 }
 
 .hint-container.close{
-  opacity: 0;
+  display: block;
   animation: fadeOut 2s ease forwards;
 }
 
