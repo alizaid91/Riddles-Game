@@ -5,6 +5,14 @@ body {
   font-family: 'Ubuntu',sans-serif;
 }
 
+body{
+  background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/15195.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  margin: 0px;
+}
+
 * {
   margin: 0px;
 }
@@ -45,23 +53,25 @@ align-items: center;
 .score-container{
     margin-top: 20px;
     text-align: center;
-    background-color: crimson;
+    background-color: #a3e635;
     padding: 5px 60px 5px 60px;
     border-radius: 80px;
 }
 
 #score{
     padding-top: 3px;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 900;
-    color: white;
+    color: #1a2e05;
 }
 
 #level-riddle {
-  margin-bottom: 5px;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 600;
-  color: #c026d3;
+  color: #134e4a;
+  background-color: #2dd4bf;
+  padding: 15px;
+  border-radius: 30px 30px 0 0;
 }
 
 #riddle {
@@ -71,7 +81,7 @@ align-items: center;
   margin-bottom: 20px;
   font-size: 25px;
   font-weight: 900;
-  background-color: black;
+  background-color: #ef4444;
   color: white;
   padding: 15px;
   border-radius: 30px;
@@ -98,7 +108,7 @@ align-items: center;
   border-radius: 24px;
   font-weight: 600;
   color: white;
-  background-color: blueviolet;
+  background-color: #ec4899;
   border: none;
   font-family: 'Ubuntu',sans-serif;
 }
@@ -132,10 +142,11 @@ align-items: center;
   font-size: 18px;
   top: 10px;
   right: 10px;
-  padding: 2px;
-  height: 20px;
-  width: 20px;
-  background-color: whitesmoke;
+  padding: 3px 3px 5px 3px;
+  font-weight: 600;
+  height: 18px;
+  width: 18px;
+  background-color: red;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -161,9 +172,9 @@ align-items: center;
   display: none;
   text-align: center;
   width: 300px;
-  height: 400px;
+  height: 300px;
   background-color: #16a34a;
-  border-radius: 10px;
+  border-radius: 40px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -179,7 +190,7 @@ align-items: center;
 
 .conguratulation-msg{
   color: white;
-  font-size: 28px;
+  font-size: 50px;
   font-weight: 900;
   line-height: 36px;
   margin-bottom: 20px;
