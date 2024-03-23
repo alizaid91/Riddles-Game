@@ -48,18 +48,13 @@ function playSound(){
 }
 
 function showHint(){
-
-  setTimeout(function () {
     document.querySelector(".hint-wrapper").style.display = "block"
     document.querySelector(".hint-container").style.display = "block"
-  }, 300);
 }
 
 function closeHint(){
-  setTimeout(function () {
       document.querySelector(".hint-wrapper").style.display = "none"
     document.querySelector(".hint-container").style.display = "none"
-  }, 300);
 }
 
 function nextRiddle(){
