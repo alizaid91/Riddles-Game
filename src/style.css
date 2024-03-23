@@ -125,6 +125,7 @@ align-items: center;
 }
 
 .hint-wrapper{
+  display: none;
   width: 100%;
   height: 100%;
   backdrop-filter: blur(5px);
@@ -132,15 +133,15 @@ align-items: center;
   top: 50%;
   left: 50%;
   transform: translate(-50% , -50%);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  animation: fadeIn 0.3s ease forwards;
 }
 
 .hint-wrapper.active{
-  opacity: 1;
+  display: block;
 }
 
 .hint-container{
+  display: none;
   text-align: center;
   width: 300px;
   height: 400px;
@@ -150,14 +151,22 @@ align-items: center;
   top: 50%;
   left: 50%;
   transform: translate(-50% , -50%);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  animation: fadeIn 0.3s ease forwards;
 }
 
 .hint-container.open{
-  opacity: 1;
+  display: block;
 }
-  
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 #close-hint-btn{
   position: absolute;
   right: 10px;
