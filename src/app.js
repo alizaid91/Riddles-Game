@@ -56,8 +56,8 @@ function showHint(){
 }
 
 function closeHint(){
-          hintContainer.classList.remove("open");
-          hintWrapper.classList.remove("active");
+          hintContainer.classList.add("close");
+          hintWrapper.classList.remove("inactive");
 }
 
 function nextRiddle(){
