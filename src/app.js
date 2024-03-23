@@ -56,12 +56,9 @@ function showHint(){
 }
 
 function closeHint(){
-    hintContainer.classList.remove("open");
-    hintWrapper.classList.remove("active");
-
-      setTimeout(function() {
-         hintContainer.style.display = "none";
-         hintWrapper.style.display = "none";
+  setTimeout(function() {
+          hintContainer.classList.remove("open");
+          hintWrapper.classList.remove("active");
   }, 300);
 }
 
