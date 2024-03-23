@@ -33,10 +33,10 @@ function checkAnswer(){
     
     let userAnswer = document.querySelector("#type-answer").value
     if(userAnswer.toLowerCase() === combinedList[riddleNumberActual].answer){
-  setTimeout(function () {
-            document.querySelector(".correct-answer-wrapper").style.display = "block"
+        
+        document.querySelector(".correct-answer-wrapper").style.display = "block"
         document.querySelector(".correct-answer-container").style.display = "block"
-  }, 300);
+        
         currentScore += 10
         score.innerHTML = `${currentScore}`
         playSound();
@@ -48,8 +48,11 @@ function playSound(){
 }
 
 function showHint(){
+
+  setTimeout(function () {
     document.querySelector(".hint-wrapper").style.display = "block"
     document.querySelector(".hint-container").style.display = "block"
+  }, 300);
 }
 
 function closeHint(){
