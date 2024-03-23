@@ -154,7 +154,7 @@ align-items: center;
   transition: opacity 0.3s ease-in-out;
 }
 
-.hint-container.active {
+.hint-container.open{
   opacity: 1;
 }
   
