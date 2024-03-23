@@ -3,6 +3,8 @@ let riddleText = document.querySelector("#riddle")
 let hintText = document.querySelector("#hint-text")
 let score = document.querySelector("#score")
 
+var audio = document.getElementById("tata-sound")
+
 let level = 0
 let riddleNumber = 0
 let riddleNumberActual = 0
@@ -32,15 +34,14 @@ function checkAnswer(){
     let userAnswer = document.querySelector("#type-answer").value
     if(userAnswer.toLowerCase() === combinedList[riddleNumberActual].answer){
         document.querySelector(".correct-answer-container").style.display = "block"
-        playSound();
         currentScore += 10
         score.innerHTML = `${currentScore}`
-        
+        playSound();
     }
 }
 
 function playSound(){
-    
+    audio.play();
 }
 
 function showHint(){
