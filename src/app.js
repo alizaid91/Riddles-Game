@@ -3,6 +3,9 @@ let riddleText = document.querySelector("#riddle")
 let hintText = document.querySelector("#hint-text")
 let score = document.querySelector("#score")
 
+var hintWrapper = document.querySelector(".hint-wrapper")
+var hintContainer = document.querySelector (".hint-container")
+
 var audio = document.getElementById("tata-sound")
 
 let level = 0
@@ -48,13 +51,13 @@ function playSound(){
 }
 
 function showHint(){
-    document.querySelector(".hint-wrapper").style.display = "block"
-    document.querySelector(".hint-container").style.display = "block"
+    hintContainer.classList.add("active");
+    hintWrapper.classList.add("active");
 }
 
 function closeHint(){
-      document.querySelector(".hint-wrapper").style.display = "none"
-    document.querySelector(".hint-container").style.display = "none"
+    hintContainer.classList.remove("active");
+    hintWrapper.classList.remove("active");
 }
 
 function nextRiddle(){
