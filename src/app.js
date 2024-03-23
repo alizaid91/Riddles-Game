@@ -51,12 +51,12 @@ function playSound(){
 }
 
 function showHint(){
-    hintContainer.classList.add("active");
+    hintContainer.classList.add("open");
     hintWrapper.classList.add("active");
 }
 
 function closeHint(){
-    hintContainer.classList.remove("active");
+    hintContainer.classList.remove("open");
     hintWrapper.classList.remove("active");
 }
 
