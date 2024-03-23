@@ -154,6 +154,9 @@ align-items: center;
   display: block;
 }
 
+.hint-wrapper.active{
+  display: block;
+}
 @keyframes popUp {
   0% {
     transform: translate(-50%, -50%) scale(0);
