@@ -4,7 +4,7 @@ let hintText = document.querySelector("#hint-text")
 let score = document.querySelector("#score")
 
 var hintWrapper = document.querySelector(".hint-wrapper")
-var hintContainer = document.querySelector (".hint-container")
+var hintContainer = document.querySelector(".hint-container")
 
 var audio = document.getElementById("tata-sound")
 
