@@ -51,13 +51,13 @@ function playSound(){
 }
 
 function showHint(){
-    hintContainer.classList.toggle("open");
-    hintWrapper.classList.toggle("active");
+    hintContainer.classList.add("active");
+    hintWrapper.classList.add("active");
 }
 
 function closeHint(){
-          hintContainer.classList.toggle("close");
-          hintWrapper.classList.toggle("inactive");
+          hintContainer.classList.remove("active");
+          hintWrapper.classList.remove("active");
 }
 
 function nextRiddle(){
