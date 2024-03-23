@@ -33,6 +33,7 @@ function checkAnswer(){
     
     let userAnswer = document.querySelector("#type-answer").value
     if(userAnswer.toLowerCase() === combinedList[riddleNumberActual].answer){
+        document.querySelector(".correct-answer-wrapper").style.display = "block"
         document.querySelector(".correct-answer-container").style.display = "block"
         currentScore += 10
         score.innerHTML = `${currentScore}`
@@ -45,10 +46,12 @@ function playSound(){
 }
 
 function showHint(){
+    document.querySelector(".hint-wrapper").style.display = "block"
     document.querySelector(".hint-container").style.display = "block"
 }
 
 function closeHint(){
+    document.querySelector(".hint-wrapper").style.display = "none"
     document.querySelector(".hint-container").style.display = "none"
 }
 
@@ -71,6 +74,7 @@ function nextRiddle(){
 
     hintText.innerHTML = `${combinedList[riddleNumberActual].hint}`
 
+    document.querySelector(".correct-answer-wrapper").style.display = "none"
     document.querySelector(".correct-answer-container").style.display = "none"
 
     let userAnswer = document.querySelectorAll("input")
