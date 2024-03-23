@@ -57,7 +57,7 @@ function showHint(){
 
 function closeHint(){
           hintContainer.classList.add("close");
-          hintWrapper.classList.remove("inactive");
+          hintWrapper.classList.add("inactive");
 }
 
 function nextRiddle(){
