@@ -56,10 +56,8 @@ function showHint(){
 }
 
 function closeHint(){
-  setTimeout(function() {
           hintContainer.classList.remove("open");
           hintWrapper.classList.remove("active");
-  }, 300);
 }
 
 function nextRiddle(){
