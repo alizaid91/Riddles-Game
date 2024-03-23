@@ -108,7 +108,7 @@ align-items: center;
   border-radius: 24px;
   font-weight: 600;
   color: white;
-  background-color: #ec4899;
+  background-color: green;
   border: none;
   font-family: 'Ubuntu',sans-serif;
 }
@@ -139,16 +139,17 @@ align-items: center;
 
 #close-hint-btn{
   position: absolute;
-  font-size: 18px;
-  top: 10px;
-  right: 10px;
-  padding: 3px 3px 5px 3px;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  background: red;
+  color: #fff;
+  font-size: 25px;
   font-weight: 600;
-  height: 18px;
-  width: 18px;
-  background-color: red;
+  line-height: 30px;
+  text-align: center;
   border-radius: 50%;
-  cursor: pointer;
 }
 
 #hint-title{
@@ -197,12 +198,12 @@ align-items: center;
 }
 
 #next-riddle-btn{
-  padding: 10px 30px 10px 30px;
+  padding: 10px 40px 10px 40px;
   border: none;
-  border-radius: 60px;
-  font-size: 20px;
+  border-radius: 70px;
+  font-size: 24px;
   background-color: blueviolet;
   color: white;
-  font-weight: 500;
+  font-weight: 600;
 
 }
