@@ -142,7 +142,7 @@ align-items: center;
 
 .hint-wrapper.inactive{
   display: none;
-  animation: fadeIn 0.3s ease forwards;
+  animation: fadeOut 2s ease forwards;
 }
 
 .hint-container{
@@ -165,7 +165,7 @@ align-items: center;
 
 .hint-container.close{
   display: none;
-  animation: fadeIn 0.3s ease forwards;
+  animation: fadeOut 2s ease forwards;
 }
 
 @keyframes popUp {
@@ -177,6 +177,17 @@ align-items: center;
   }
   100% {
     transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
   }
 }
 
