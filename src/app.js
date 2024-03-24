@@ -122,14 +122,21 @@ function playSound() {
 }
 
 function showHint() {
-  hintContainer.classList.add("active");
-  hintWrapper.classList.add("active");
+  hintWrapper.style.display = "block";
+  hintContainer.style.display = "block";
+  setTimeout(function() {
+    hintWrapper.classList.add("active");
+    hintContainer.classList.add("active");
+  }, 10);
 }
 
 function closeHint() {
-  hintContainer.classList.remove("active");
   hintWrapper.classList.remove("active");
-  // Add a delay to trigger the closing animation after a short 
+  hintContainer.classList.remove("active");
+  setTimeout(function() {
+    hintWrapper.style.display = "none";
+    hintContainer.style.display = "none";
+  }, 300);
 }
 
 function nextRiddle() {
