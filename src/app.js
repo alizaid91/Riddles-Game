@@ -122,18 +122,15 @@ function playSound() {
 }
 
 function showHint() {
-  hintContainer.style.display = "block"; // Ensure the container is visible
-  hintWrapper.style.display = "block"; // Ensure the wrapper is visible
-  setTimeout(function() {
-    hintContainer.classList.add("active");
-    hintWrapper.classList.add("active");
-  }, 10); // Add a slight delay to allow proper rendering before applying the animation
+  hintContainer.classList.add("active");
+  hintWrapper.classList.add("active");
 }
 
 function closeHint() {
   hintContainer.classList.remove("active");
   hintWrapper.classList.remove("active");
-  // Add a delay to allow the closing animation to complete before hiding the elements
+  // Add a delay to trigger the closing animation after a short 
+}
 
 function nextRiddle() {
   riddleNumberActual += 1;
