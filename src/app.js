@@ -158,14 +158,19 @@ function nextRiddle() {
   userAnswer.forEach((input) => (input.value = ""));
 }
 
-function readText() {
+function toggleMusic() {
   var bgMusic = document.getElementById("bgMusic");
+  var musicIcon = document.getElementById("music-icon-img");
   bgMusic.volume = 0.4;
 
   if (bgMusic.paused) {
     bgMusic.play();
+    musicIcon.classList.remove("fa-play", "fa-pause");
+    musicIcon.classList.add("fa-music");
   } else {
     bgMusic.pause();
+    musicIcon.classList.remove("fa-music", "fa-play");
+    musicIcon.classList.add("fa-pause");
   }
 
   // var riddleToRead = riddleText.innerHTML;
