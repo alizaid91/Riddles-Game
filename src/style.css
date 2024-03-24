@@ -2,11 +2,11 @@ html,
 body {
   width: 100%;
   height: 100%;
-  font-family: 'Ubuntu',sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
-body{
-  background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/15195.jpg');
+body {
+  background-image: url("https://4kwallpapers.com/images/walls/thumbs_3t/15195.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -25,12 +25,12 @@ body{
   align-items: center;
 }
 
-.wrapper{
-width: 100%;
-height: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .content {
@@ -42,54 +42,57 @@ align-items: center;
   flex-direction: column;
 }
 
+/*Music icon Styling*/
 #music-container {
   position: fixed;
   top: 10px;
   left: 10px;
 }
 
-#music-icon-img{
+#music-icon-img {
   font-size: 30px;
 }
 
 #music-icon {
-    cursor: pointer;
-    position: relative;
-    display: inline-block;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
 }
 
-  #music-icon::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 120%;
-    height: 4px; /* Adjust the thickness of the line */
-    background-color: red; /* Adjust color of the line */
-    transform: translate(-50%, -50%) rotate(45deg); /* Adjust rotation angle */
-    transition: opacity 0.3s ease-in-out; /* Add transition for smoother appearance */
-    opacity: 0; /* Initially hide the cross overlay */
-  }
-
-  .paused #music-icon::after {
-    opacity: 1; /* Show the cross overlay when music is paused */
-  }
-
-.score-container{
-    margin-top: 20px;
-    text-align: center;
-    background-color: #a3e635;
-    padding: 5px 60px 5px 60px;
-    border-radius: 80px;
+#music-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 4px; /* Adjust the thickness of the line */
+  background-color: red; /* Adjust color of the line */
+  transform: translate(-50%, -50%) rotate(45deg); /* Adjust rotation angle */
+  transition: opacity 0.3s ease-in-out; /* Add transition for smoother appearance */
+  opacity: 0; /* Initially hide the cross overlay */
 }
 
-#score{
-    padding-top: 3px;
-    font-size: 35px;
-    font-weight: 900;
-    color: #1a2e05;
+.paused #music-icon::after {
+  opacity: 1; /* Show the cross overlay when music is paused */
 }
 
+/*Score Board Styling*/
+.score-container {
+  margin-top: 20px;
+  text-align: center;
+  background-color: #a3e635;
+  padding: 5px 60px 5px 60px;
+  border-radius: 80px;
+}
+
+#score {
+  padding-top: 3px;
+  font-size: 35px;
+  font-weight: 900;
+  color: #1a2e05;
+}
+
+/*Riddle box*/
 #level-riddle {
   font-size: 26px;
   font-weight: 600;
@@ -113,6 +116,7 @@ align-items: center;
   line-height: 32px;
 }
 
+/*Enter Answer*/
 #type-answer {
   width: 200px;
   margin-bottom: 10px;
@@ -123,9 +127,10 @@ align-items: center;
   border-radius: 28px;
   text-align: center;
   background-color: whitesmoke;
-  font-family: 'Ubuntu',sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
+/*Check Answer button*/
 #check-answer-btn {
   width: 100px;
   font-size: 18px;
@@ -135,21 +140,32 @@ align-items: center;
   color: white;
   background-color: green;
   border: none;
-  font-family: 'Ubuntu',sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
+@keyframes shake-check-ans-btn {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .shake {
-  animation: shake 0.5s ease-in-out;
+  animation: shake-check-ans-btn 0.5s ease-in-out;
 }
 
+/*Hint icon*/
 .fa-lightbulb {
   font-size: 40px;
   margin-bottom: 30px;
@@ -157,25 +173,25 @@ align-items: center;
   cursor: pointer;
 }
 
+/*Hint PopUp Styling*/
 #hint-icon {
   text-align: center;
   outline: none;
 }
 
-.hint-wrapper{
+.hint-wrapper {
   display: none;
   width: 100%;
   height: 100%;
   backdrop-filter: blur(5px);
   position: absolute;
-  top: 50%;
+  bottom: 0;
   left: 50%;
-  transform: translate(-50% , -50%) scale(0);
-  animation: popUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-  /*transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Use cubic-bezier for both in and out transitions */
+  transform: translateX(-50%) translateY(100%) scale(0); /* Start from bottom position */
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Use cubic-bezier for both in and out transitions */
 }
 
-.hint-container{
+.hint-container {
   display: none;
   text-align: center;
   width: 300px;
@@ -183,26 +199,23 @@ align-items: center;
   background-color: #16a34a;
   border-radius: 10px;
   position: absolute;
-  bottom: 50%;
-  
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%) translateY(100%) scale(0); /* Start from bottom position */
-  /*animation: popUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;*/
-  /*transition: transform 0.3s ease-in-out; /* Smooth transition effect */
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Use cubic-bezier for both in and out transitions */
 }
 
-
-.hint-wrapper.active{
-  display: block;
-}
-
-.hint-container.active{
+.hint-wrapper.active {
   display: block;
   transform: translateX(-50%) translateY(0) scale(1); /* Move to top position */
 }
 
-#close-hint-btn{
+.hint-container.active {
+  display: block;
+  transform: translateX(-50%) translateY(0) scale(1); /* Move to top position */
+}
+
+#close-hint-btn {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -217,12 +230,12 @@ align-items: center;
   border-radius: 50%;
 }
 
-#hint-title{
+#hint-title {
   font-size: 50px;
   padding: 20px;
 }
 
-#hint-text{
+#hint-text {
   position: absolute;
   width: 80%;
   top: 50%;
@@ -234,7 +247,8 @@ align-items: center;
   font-weight: 700;
 }
 
-.correct-answer-wrapper{
+/*Correct Answer PopUp Styling*/
+.correct-answer-wrapper {
   display: none;
   width: 100%;
   height: 100%;
@@ -242,11 +256,11 @@ align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50% , -50%);
-  animation: popUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Use cubic-bezier for both in and out transitions */
 }
 
-.correct-answer-container{
+.correct-answer-container {
   display: none;
   text-align: center;
   width: 300px;
@@ -256,16 +270,54 @@ align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50% , -50%);
-  animation: popUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Use cubic-bezier for both in and out transitions */
 }
 
-.correct-answer-wrapper.active{
+.correct-answer-wrapper.active {
   display: block;
+  transform: translate(-50%, -50%) scale(1);
 }
 
-.correct-answer-container.active{
+.correct-answer-container.active {
   display: block;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.xyz {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.conguratulation-msg {
+  color: white;
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 36px;
+  margin-bottom: 20px;
+}
+
+#next-riddle-btn {
+  padding: 10px 40px 10px 40px;
+  border: none;
+  border-radius: 70px;
+  font-size: 24px;
+  background-color: blueviolet;
+  color: white;
+  font-weight: 700;
+  animation: shake-next-ridd-btn 0.2s infinite alternate; /* Shake animation */
+  animation-delay: 2s;
+}
+
+@keyframes shake-next-ridd-btn {
+  0% {
+    transform: translateX(4px); /* Move left */
+  }
+  100% {
+    transform: translateX(-4px); /* Move right */
+  }
 }
 
 @keyframes popUp {
@@ -278,30 +330,4 @@ align-items: center;
   100% {
     transform: translate(-50%, -50%) scale(1);
   }
-}
-
-.xyz{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
-.conguratulation-msg{
-  color: white;
-  font-size: 50px;
-  font-weight: 900;
-  line-height: 36px;
-  margin-bottom: 20px;
-}
-
-#next-riddle-btn{
-  padding: 10px 40px 10px 40px;
-  border: none;
-  border-radius: 70px;
-  font-size: 24px;
-  background-color: blueviolet;
-  color: white;
-  font-weight: 700;
-
 }

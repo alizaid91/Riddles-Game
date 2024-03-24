@@ -45,9 +45,9 @@ const combinedList = [
     hint: "It's related to sound.",
   },
   {
-    riddle: "What gets wet while drying?",
-    answer: "towel",
-    hint: "It's a common household item used for drying off after a shower or bath.",
+    riddle: "I'm always in front of you but can't be seen. What am I?",
+    answer: "The Future",
+    hint: "It's ahead of you, yet unseen.",
   },
   {
     riddle: "The more you take, the more you leave behind. What are they?",
@@ -72,7 +72,7 @@ const combinedList = [
   {
     riddle: "What can fill a room but takes up no space?",
     answer: "light",
-    hint: "Think about something intangible or conceptual that can occupy a room without physically occupying any space within it. Consider elements like sound, light, or atmosphere.",
+    hint: "Think of something intangible that sets the mood in a room.",
   },
   {
     riddle: "What has a neck but no head?",
@@ -99,8 +99,12 @@ const combinedList = [
 function checkAnswer() {
   let userAnswer = document.querySelector("#type-answer").value;
   if (userAnswer.toLowerCase() === combinedList[riddleNumberActual].answer) {
-    correctAnsContainer.classList.add("active");
-    correctAnsWrapper.classList.add("active");
+    correctAnsContainer.style.display = "block";
+    correctAnsWrapper.style.display = "block";
+    setTimeout(function() {
+      correctAnsContainer.classList.add("active");
+      correctAnsWrapper.classList.add("active");
+    }, 10);
 
     currentScore += 10;
     score.innerHTML = `${currentScore}`;
@@ -160,6 +164,10 @@ function nextRiddle() {
 
   correctAnsContainer.classList.remove("active");
   correctAnsWrapper.classList.remove("active");
+  setTimeout(function() {
+   correctAnsContainer.style.display = "none";
+    correctAnsWrapper.style.display = "none";
+  }, 300);
 
   let userAnswer = document.querySelectorAll("input");
 
