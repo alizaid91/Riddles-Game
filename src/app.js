@@ -165,12 +165,10 @@ function toggleMusic() {
 
   if (bgMusic.paused) {
     bgMusic.play();
-    musicIcon.classList.remove("fa-play", "fa-pause");
-    musicIcon.classList.add("fa-music");
+    musicContainer.classList.remove("paused");
   } else {
     bgMusic.pause();
-    musicIcon.classList.remove("fa-music", "fa-play");
-    musicIcon.classList.add("fa-pause");
+    musicContainer.classList.add("paused");
   }
 
   // var riddleToRead = riddleText.innerHTML;
