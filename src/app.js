@@ -9,7 +9,7 @@ var hintContainer = document.querySelector(".hint-container");
 var correctAnsWrapper = document.querySelector(".correct-answer-wrapper");
 var correctAnsContainer = document.querySelector(".correct-answer-container");
 
-var audio = document.getElementById("tata-sound");
+var sound = document.getElementById("tata-sound");
 
 let level = 0;
 let riddleNumber = 0;
@@ -108,7 +108,8 @@ function checkAnswer() {
 }
 
 function playSound() {
-  audio.play();
+  sound.play();
+  sound.volume = 0.6;
 }
 
 function showHint() {
@@ -148,8 +149,24 @@ function nextRiddle() {
   userAnswer.forEach((input) => (input.value = ""));
 }
 
-var audio = document.getElementById("background-music");
-  audio.volume = 0.4; // Set volume to 50%
+  // Get the audio element
+  var audio = document.getElementById("background-music");
+
+  // Check if the audio was playing before
+  var isPlaying = sessionStorage.getItem("audioPlaying");
+
+  // Set the volume (0.0 to 1.0, where 0.0 is mute and 1.0 is full volume)
+  audio.volume = 0.3; // Set volume to 50%
+
+  // If the audio was playing before, resume playback
+  if (isPlaying === "true") {
+    audio.play();
+  }
+
+  // Save the playback state when the page is unloaded
+  window.addEventListener("beforeunload", function() {
+    sessionStorage.setItem("audioPlaying", audio.paused ? "false" : "true");
+  });
 
 function readText() {
   var riddleToRead = riddleText.innerHTML;
