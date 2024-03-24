@@ -160,7 +160,7 @@ function nextRiddle() {
 
 function toggleMusic() {
   var bgMusic = document.getElementById("bgMusic");
-  var musicIcon = document.getElementById("#music-container");
+  var musicIcon = document.getElementById("music-container");
   bgMusic.volume = 0.4;
 
   if (bgMusic.paused) {
