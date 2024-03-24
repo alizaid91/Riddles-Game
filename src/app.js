@@ -134,11 +134,6 @@ function closeHint() {
   hintContainer.classList.remove("active");
   hintWrapper.classList.remove("active");
   // Add a delay to allow the closing animation to complete before hiding the elements
-  setTimeout(function() {
-    hintContainer.style.display = "none"; // Hide the container after animation
-    hintWrapper.style.display = "none"; // Hide the wrapper after animation
-  }, 300); // Adjust the delay to match the duration of your animation (in milliseconds)
-}
 
 function nextRiddle() {
   riddleNumberActual += 1;
