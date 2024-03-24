@@ -42,17 +42,19 @@ align-items: center;
   flex-direction: column;
 }
 
-#music-icon {
-  position: absolute;
+#music-container {
+  position: fixed;
   top: 10px;
   left: 10px;
+  z-index: 9999; /* Ensure it's above other content */
+}
+
+#music-icon {
   cursor: pointer;
 }
 
 #music-icon-img {
-  position: absolute;
   font-size: 24px;
-  transition: transform 0.3s ease-in-out;
 }
 
 .score-container{
