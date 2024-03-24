@@ -42,7 +42,7 @@ align-items: center;
   flex-direction: column;
 }
 
-.fa-volume-high{
+.fa-music{
     position: absolute;
     top: 10px;
     left: 10px;

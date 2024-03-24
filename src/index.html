@@ -11,8 +11,8 @@
     <title>Riddle Game</title>
 </head>
 <body>
-    <audio id="background-music" autoplay loop>
-        <source src="solve-the-riddle-140001.mp3" type="audio/mpeg">
+    <audio id="bgMusic" autoplay loop>
+        <source src="solve-the-riddle-140001.mp3" type="audio/mp3">
         Your browser does not support the audio element.
       </audio>
 
@@ -31,7 +31,7 @@
     <div  id="hint-icon">
         <i class="fa-solid fa-lightbulb" onclick="showHint()"></i>
     </div>
-    <i class="fa-solid fa-volume-high" onclick="readText()"></i>
+    <i id="music-icon" class="fa-solid fa-music" onclick="readText()"></i>
     </div>
     <div class="hint-wrapper">
     <div class="hint-container" id="hint-popup">

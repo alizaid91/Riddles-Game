@@ -1,3 +1,4 @@
+bgMusic.play();
 let riddleLevel = document.querySelector("#level-riddle");
 let riddleText = document.querySelector("#riddle");
 let hintText = document.querySelector("#hint-text");
@@ -149,48 +150,38 @@ function nextRiddle() {
   userAnswer.forEach((input) => (input.value = ""));
 }
 
-  // Get the audio element
-  var audio = document.getElementById("background-music");
-
-  // Check if the audio was playing before
-  var isPlaying = sessionStorage.getItem("audioPlaying");
-
-  // Set the volume (0.0 to 1.0, where 0.0 is mute and 1.0 is full volume)
-  audio.volume = 0.3; // Set volume to 50%
-
-  // If the audio was playing before, resume playback
-  if (isPlaying === "true") {
-    audio.play();
-  }
-
-  // Save the playback state when the page is unloaded
-  window.addEventListener("beforeunload", function() {
-    sessionStorage.setItem("audioPlaying", audio.paused ? "false" : "true");
-  });
-
 function readText() {
-  var riddleToRead = riddleText.innerHTML;
+  var bgMusic = document.getElementById("bgMusic");
+  bgMusic.volume = 0.4;
 
-  var speech = new SpeechSynthesisUtterance();
-  speech.text = riddleToRead;
-  speech.lang = "en-US"; // Language
-
-  // Find a male voice
-  var voices = window.speechSynthesis.getVoices();
-  var maleVoice = voices.find(function (voice) {
-    return voice.name.includes("Male");
-  });
-
-  if (maleVoice) {
-    speech.voice = maleVoice;
+  if (bgMusic.paused) {
+    bgMusic.play();
   } else {
-    console.log("Male voice not found. Using default voice.");
+    bgMusic.pause();
   }
 
-  // Adjust speech parameters
-  speech.rate = 1.1; // Speech rate (default is 1)
-  speech.pitch = 0.7; // Speech pitch (default is 1)
-  speech.volume = 1; // Speech volume (default is 1)
+  // var riddleToRead = riddleText.innerHTML;
 
-  speechSynthesis.speak(speech);
+  // var speech = new SpeechSynthesisUtterance();
+  // speech.text = riddleToRead;
+  // speech.lang = "en-US"; // Language
+
+  // // Find a male voice
+  // var voices = window.speechSynthesis.getVoices();
+  // var maleVoice = voices.find(function (voice) {
+  //   return voice.name.includes("Male");
+  // });
+
+  // if (maleVoice) {
+  //   speech.voice = maleVoice;
+  // } else {
+  //   console.log("Male voice not found. Using default voice.");
+  // }
+
+  // // Adjust speech parameters
+  // speech.rate = 1.1; // Speech rate (default is 1)
+  // speech.pitch = 0.7; // Speech pitch (default is 1)
+  // speech.volume = 1; // Speech volume (default is 1)
+
+  // speechSynthesis.speak(speech);
 }
