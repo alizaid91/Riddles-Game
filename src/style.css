@@ -183,9 +183,9 @@ align-items: center;
   background-color: #16a34a;
   border-radius: 10px;
   position: absolute;
-  top: 50%;
+  bottom: 0;
   left: 50%;
-  transform: translate(-50% , -50%) scale(0);
+  transform: translateX(-50%) translateY(100%) scale(0); /* Start from bottom position */
   /*animation: popUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;*/
   /*transition: transform 0.3s ease-in-out; /* Smooth transition effect */
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Use cubic-bezier for both in and out transitions */
@@ -198,7 +198,7 @@ align-items: center;
 
 .hint-container.active{
   display: block;
-  transform: translate(-50%, -50%) scale(1); /* Ensure the container is visible */
+  transform: translateX(-50%) translateY(0) scale(1); /* Move to top position */
 }
 
 #close-hint-btn{
