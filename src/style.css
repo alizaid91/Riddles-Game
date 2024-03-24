@@ -50,7 +50,7 @@ align-items: center;
 }
 
 #music-icon-img {
-  position: relative;
+  position: absolute;
   font-size: 24px;
   transition: transform 0.3s ease-in-out;
 }
