@@ -113,6 +113,18 @@ align-items: center;
   font-family: 'Ubuntu',sans-serif;
 }
 
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
 .fa-lightbulb {
   font-size: 40px;
   margin-bottom: 30px;
