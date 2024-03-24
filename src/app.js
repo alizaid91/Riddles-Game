@@ -106,6 +106,14 @@ function checkAnswer() {
     score.innerHTML = `${currentScore}`;
     playSound();
   }
+  else{
+    var checkAnswerBtn = document.querySelector("#check-answer-btn");
+    checkAnswerBtn.classList.add("shake");
+    
+  setTimeout(function() {
+      button.classList.remove("shake");
+    }, 500);
+  }
 }
 
 function playSound() {
