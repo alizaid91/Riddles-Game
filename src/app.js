@@ -122,17 +122,21 @@ function playSound() {
 }
 
 function showHint() {
-  hintContainer.classList.add("active");
-  hintWrapper.classList.add("active");
+  hintContainer.style.display = "block"; // Ensure the container is visible
+  hintWrapper.style.display = "block"; // Ensure the wrapper is visible
+  setTimeout(function() {
+    hintContainer.classList.add("active");
+    hintWrapper.classList.add("active");
+  }, 10); // Add a slight delay to allow proper rendering before applying the animation
 }
 
 function closeHint() {
   hintContainer.classList.remove("active");
   hintWrapper.classList.remove("active");
-  // Add a delay to trigger the closing animation after a short delay
+  // Add a delay to allow the closing animation to complete before hiding the elements
   setTimeout(function() {
-    hintContainer.classList.remove("active");
-    hintWrapper.classList.remove("active");
+    hintContainer.style.display = "none"; // Hide the container after animation
+    hintWrapper.style.display = "none"; // Hide the wrapper after animation
   }, 300); // Adjust the delay to match the duration of your animation (in milliseconds)
 }
 
