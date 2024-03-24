@@ -51,14 +51,17 @@ align-items: center;
 
 #music-icon-img{
   font-size: 30px;
-  outline: none;
+  outline: none
 }
 
 #music-icon {
     cursor: pointer;
     position: relative;
     display: inline-block;
-    outline: none;
+}
+
+#music-icon:focus {
+  outline: none;
 }
 
 #music-icon::after{
