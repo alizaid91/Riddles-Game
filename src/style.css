@@ -85,7 +85,7 @@ align-items: center;
     top: 50%;
     left: 50%;
     width: 20px; /* Adjust the width of the cross */
-    height: 2px; /* Adjust the height of the cross */
+    height: 4px; /* Adjust the height of the cross */
     background-color: red; /* Color of the cross */
     transform: translate(-50%, -50%) rotate(45deg); /* Rotate the cross to form an 'X' */
     opacity: 0; /* Initially hide the cross */
