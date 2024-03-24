@@ -111,7 +111,7 @@ function checkAnswer() {
     checkAnswerBtn.classList.add("shake");
     
   setTimeout(function() {
-      button.classList.remove("shake");
+      checkAnswerBtn.classList.remove("shake");
     }, 500);
   }
 }
