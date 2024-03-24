@@ -67,8 +67,8 @@ align-items: center;
     height: 2px;
     background-color: red; /* Adjust color of the line */
     transform: translate(-50%, -50%) rotate(45deg); /* Adjust rotation angle */
-    transition: transform 0.3s ease-in-out; /* Add transition for smoother rotation animation */
-  opacity: 0;
+    transition: opacity 0.3s ease-in-out; /* Add transition for smoother rotation animation */
+    opacity: 0;
 }
 
   .paused #music-icon::after {
