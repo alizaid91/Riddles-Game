@@ -148,6 +148,9 @@ function nextRiddle() {
   userAnswer.forEach((input) => (input.value = ""));
 }
 
+var audio = document.getElementById("background-music");
+  audio.volume = 0.4; // Set volume to 50%
+
 function readText() {
   var riddleToRead = riddleText.innerHTML;
 
@@ -168,7 +171,7 @@ function readText() {
   }
 
   // Adjust speech parameters
-  speech.rate = 1.3; // Speech rate (default is 1)
+  speech.rate = 1.1; // Speech rate (default is 1)
   speech.pitch = 0.7; // Speech pitch (default is 1)
   speech.volume = 1; // Speech volume (default is 1)
 
