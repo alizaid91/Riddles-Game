@@ -46,12 +46,10 @@ align-items: center;
   position: fixed;
   top: 10px;
   left: 10px;
-  outline: none;
 }
 
 #music-icon-img{
   font-size: 30px;
-  outline: none
 }
 
 #music-icon {
@@ -59,10 +57,7 @@ align-items: center;
     position: relative;
     display: inline-block;
     outline: none;
-}
-
-#music-icon:focus {
-  outline: none;
+    touch-action: none;
 }
 
 #music-icon::after{
