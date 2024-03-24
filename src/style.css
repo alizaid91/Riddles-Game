@@ -92,7 +92,7 @@ align-items: center;
     transition: opacity 0.3s ease; /* Smooth transition for opacity change */
   }
 
-  .paused #music-icon::before {
+  .paused #music-icon:active::before {
     opacity: 0.5; /* Show the circle when icon is focused */
   }
 
