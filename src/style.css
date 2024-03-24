@@ -46,6 +46,7 @@ align-items: center;
   position: fixed;
   top: 10px;
   left: 10px;
+  transition: opacity 0.3s ease-in-out;
 }
 
 #music-icon {
@@ -55,6 +56,10 @@ align-items: center;
 #music-icon-img {
   font-size: 24px;
   transition: transform 0.3s ease-in-out;
+}
+
+.paused #music-icon-img {
+  transform: rotate(45deg); /* Rotate the music icon to resemble a pause icon */
 }
 
 .score-container{
