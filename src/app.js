@@ -129,6 +129,11 @@ function showHint() {
 function closeHint() {
   hintContainer.classList.remove("active");
   hintWrapper.classList.remove("active");
+  // Add a delay to trigger the closing animation after a short delay
+  setTimeout(function() {
+    hintContainer.classList.remove("active");
+    hintWrapper.classList.remove("active");
+  }, 300); // Adjust the delay to match the duration of your animation (in milliseconds)
 }
 
 function nextRiddle() {
