@@ -58,6 +58,7 @@ align-items: center;
     cursor: pointer;
     position: relative;
     display: inline-block;
+    outline: none;
 }
 
 #music-icon:focus {
