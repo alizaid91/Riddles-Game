@@ -3,6 +3,7 @@ let riddleLevel = document.querySelector("#level-riddle");
 let riddleText = document.querySelector("#riddle");
 let hintText = document.querySelector("#hint-text");
 let score = document.querySelector("#score");
+let homePage = document.querySelector(".home-page")
 
 var hintWrapper = document.querySelector(".hint-wrapper");
 var hintContainer = document.querySelector(".hint-container");
@@ -96,6 +97,14 @@ const combinedList = [
   },
 ];
 
+function startGame() {
+  homePage.classList.toggle("remove");
+
+  setTimeout(function() {
+    bgMusic.play();
+  }, 700)
+}
+
 function checkAnswer() {
   let userAnswer = document.querySelector("#type-answer").value;
   if (userAnswer.toLowerCase() === combinedList[riddleNumberActual].answer) {
@@ -110,11 +119,11 @@ function checkAnswer() {
     score.innerHTML = `${currentScore}`;
     playSound();
   }
-  else{
+  else {
     var checkAnswerBtn = document.querySelector("#check-answer-btn");
     checkAnswerBtn.classList.add("shake");
-    
-  setTimeout(function() {
+
+    setTimeout(function() {
       checkAnswerBtn.classList.remove("shake");
     }, 500);
   }
@@ -165,7 +174,7 @@ function nextRiddle() {
   correctAnsContainer.classList.remove("active");
   correctAnsWrapper.classList.remove("active");
   setTimeout(function() {
-   correctAnsContainer.style.display = "none";
+    correctAnsContainer.style.display = "none";
     correctAnsWrapper.style.display = "none";
   }, 300);
 

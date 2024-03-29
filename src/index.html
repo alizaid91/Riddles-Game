@@ -1,59 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/7cb36297d1.js" crossorigin="anonymous"></script>
-    <title>Riddle Game</title>
-</head>
-<body>
-    <audio id="bgMusic" autoplay loop>
-        <source src="solve-the-riddle-140001.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-      </audio>
 
-    <div class="main">
-        <div class="score-container">
-            <p id="score">0</p>
-        </div>
-        <div class="wrapper">
-        <div class="content">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/7cb36297d1.js" crossorigin="anonymous"></script>
+  <title>Riddle Game</title>
+</head>
+
+<body>
+
+  <div class="home-page">
+    <div class="game-name">
+      <h1>Riddle Quest</h1>
+      <p>Journey of Puzzles!</p>
+    </div>
+    <div class="home-page-container">
+      <ul class="instructions-list">
+        <li>
+          <h3>Embark on an Adventure:</h3>
+          <p>Prepare yourself for an exciting journey filled with intriguing riddles and challenges.</p>
+        </li>
+        <li>
+          <h3>Explore Five Levels:</h3>
+          <p>Dive into five levels, each offering a unique set of riddles waiting to be solved. Discover new challenges
+            and excitement at every turn.</p>
+        </li>
+        <li>
+          <h3>Use Hints to Aid You:</h3>
+          <p>If you find yourself stuck, fear not! You have access to hints to help you along the way. Hints can be used
+            freely without any limitations.</p>
+        </li>
+        <li>
+          <h3>Earn Points for Correct Answers:</h3>
+          <p>Solve each riddle to earn points. Each correct answer will reward you with 10 points.</p>
+        </li>
+        <li>
+          <h3>Strive for Victory:</h3>
+          <p>Your objective is to conquer all levels and emerge victorious. Are you up for the challenge?</p>
+        </li>
+        <li>
+          <h3>Let the Adventure Begin:</h3>
+          <p>Click "Start" to commence your Riddle Quest!</p>
+        </li>
+      </ul>
+    </div>
+    <div class="button-container">
+      <button onclick="startGame()">Start</button>
+    </div>
+  </div>
+
+  <audio id="bgMusic" autoplay loop>
+    <source src="solve-the-riddle-140001.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="main">
+    <div class="score-container">
+      <p id="score">0</p>
+    </div>
+    <div class="wrapper">
+      <div class="content">
         <p id="level-riddle">Lv.1 Riddle.1</p>
         <p id="riddle">What begins with an 'e' and only contains one letter?</p>
         <input id="type-answer" type="text" placeholder="Type your answer">
         <button id="check-answer-btn" onclick="checkAnswer()">Check</button>
+      </div>
     </div>
+    <div id="hint-icon">
+      <i class="fa-solid fa-lightbulb" onclick="showHint()"></i>
     </div>
-    <div  id="hint-icon">
-        <i class="fa-solid fa-lightbulb" onclick="showHint()"></i>
+    <div id="music-container">
+      <div id="music-icon" onclick="toggleMusic()">
+        <i id="music-icon-img" class="fas fa-music"></i>
+      </div>
     </div>
-        <div id="music-container">
-    <div id="music-icon" onclick="toggleMusic()">
-    <i id="music-icon-img" class="fas fa-music"></i>
-    </div>
-        </div>
     <div class="hint-wrapper">
-    <div class="hint-container" id="hint-popup">
+      <div class="hint-container" id="hint-popup">
         <h1 id="hint-title">Hint</h1>
         <button onclick="closeHint()" id="close-hint-btn">&times;</button>
         <p id="hint-text">It's a type of stationery.</p>
+      </div>
     </div>
-</div>
-<div class="correct-answer-wrapper">
-    <div class="correct-answer-container" id="correct-answer-popup">
+    <div class="correct-answer-wrapper">
+      <div class="correct-answer-container" id="correct-answer-popup">
         <div class="correct-answer-content">
-            <div class="xyz">
-        <p class="conguratulation-msg">Correct!</p>
-        <button id="next-riddle-btn" onclick="nextRiddle()">Next</button>
-        <audio id="tata-sound" src="tada-fanfare-a-6313.mp3"></audio>
+          <div class="xyz">
+            <p class="conguratulation-msg">Correct!</p>
+            <button id="next-riddle-btn" onclick="nextRiddle()">Next</button>
+            <audio id="tata-sound" src="tada-fanfare-a-6313.mp3"></audio>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
-    </div>
-</div>
     <script src="app.js"></script>
 </body>
+
 </html>
