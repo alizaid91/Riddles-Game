@@ -47,7 +47,7 @@ const combinedList = [
   },
   {
     riddle: "I'm always in front of you but can't be seen. What am I?",
-    answer: "The Future",
+    answer: "future",
     hint: "It's ahead of you, yet unseen.",
   },
   {
