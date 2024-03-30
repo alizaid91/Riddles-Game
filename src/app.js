@@ -2,8 +2,10 @@ bgMusic.play();
 let riddleLevel = document.querySelector("#level-riddle");
 let riddleText = document.querySelector("#riddle");
 let hintText = document.querySelector("#hint-text");
+let hintTitle = document.querySelector("#hint-title");
 let score = document.querySelector("#score");
 let homePage = document.querySelector(".home-page")
+let hintUsedCount = document.querySelector("#hint-used");
 
 var hintWrapper = document.querySelector(".hint-wrapper");
 var hintContainer = document.querySelector(".hint-container");
@@ -48,7 +50,7 @@ const combinedList = [
   {
     riddle: "I'm always in front of you but can't be seen. What am I?",
     answer: "future",
-    hint: "It's ahead of you, yet unseen.",
+    hint: "I'm a constant companion, yet invisible to the eye. Think about where you often find yourself.",
   },
   {
     riddle: "The more you take, the more you leave behind. What are they?",
@@ -81,9 +83,9 @@ const combinedList = [
     hint: "It holds liquids.",
   },
   {
-    riddle: "What has many eyes but can't see?",
-    answer: "potato",
-    hint: "It's a vegetable.",
+    riddle: "What has cities, but no houses; forests, but no trees; and rivers, but no water?",
+    answer: "A map",
+    hint: "It's a tool used for navigation.",
   },
   {
     riddle: "What can you keep after giving it to someone?",
@@ -106,7 +108,7 @@ function startGame() {
 }
 
 function checkAnswer() {
-  let userAnswer = document.querySelector("#type-answer").value;
+  let userAnswer = document.querySelector("#type-answer").value.trim();
   if (userAnswer.toLowerCase() === combinedList[riddleNumberActual].answer) {
     correctAnsContainer.style.display = "block";
     correctAnsWrapper.style.display = "block";
@@ -134,7 +136,21 @@ function playSound() {
   sound.volume = 0.6;
 }
 
+let hintFlag = false;
+let hintsAvalable = 5;
+
 function showHint() {
+  if (hintsAvalable === 0) {
+    hintContainer.classList.add("no-hints");
+    hintText.innerHTML = `Sorry! You have no hints left.`;
+    hintTitle.style.display = "none";
+  }
+  else if (!hintFlag) {
+    hintsAvalable -= 1;
+    hintUsedCount.innerHTML = `${hintsAvalable}`;
+    hintFlag = true;
+  }
+
   hintWrapper.style.display = "block";
   hintContainer.style.display = "block";
   setTimeout(function() {
@@ -157,6 +173,8 @@ function nextRiddle() {
   riddleNumber += 1;
   hintNumber += 1;
 
+  hintFlag = false;
+
   if (riddleNumber % 3 === 0) {
     level += 1;
   }
@@ -165,11 +183,11 @@ function nextRiddle() {
     riddleNumber = 0;
   }
 
-  riddleLevel.innerHTML = `Lv.${level + 1} Riddle.${riddleNumber + 1}`;
+  riddleLevel.innerHTML = `Lv.${level + 1} Riddle.${riddleNumber + 1} `;
 
-  riddleText.innerHTML = `${combinedList[riddleNumberActual].riddle}`;
+  riddleText.innerHTML = `${combinedList[riddleNumberActual].riddle} `;
 
-  hintText.innerHTML = `${combinedList[riddleNumberActual].hint}`;
+  hintText.innerHTML = `${combinedList[riddleNumberActual].hint} `;
 
   correctAnsContainer.classList.remove("active");
   correctAnsWrapper.classList.remove("active");
