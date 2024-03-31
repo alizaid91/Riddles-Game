@@ -13,7 +13,10 @@ var hintContainer = document.querySelector(".hint-container");
 var correctAnsWrapper = document.querySelector(".correct-answer-wrapper");
 var correctAnsContainer = document.querySelector(".correct-answer-container");
 
+var gameCompleted = document.querySelector(".game-completed")
+
 var sound = document.getElementById("tata-sound");
+var victorySound = document.getElementById("victory-sound")
 
 let level = 0;
 let riddleNumber = 0;
@@ -84,7 +87,7 @@ const combinedList = [
   },
   {
     riddle: "What has cities, but no houses; forests, but no trees; and rivers, but no water?",
-    answer: "A map",
+    answer: "map",
     hint: "It's a tool used for navigation.",
   },
   {
@@ -109,7 +112,17 @@ function startGame() {
 
 function checkAnswer() {
   let userAnswer = document.querySelector("#type-answer").value.trim();
-  if (userAnswer.toLowerCase() === combinedList[riddleNumberActual].answer) {
+  if (currentScore === 140 && userAnswer.toLowerCase() === combinedList[riddleNumberActual].answer) {
+    gameCompleted.style.display = "block";
+    setTimeout(function() {
+      gameCompleted.classList.add("active");
+    }, 10);
+    bgMusic.pause();
+    setTimeout(function() {
+      victorySound.play()
+    }, 1)
+  }
+  else if (currentScore != 140 && userAnswer.toLowerCase() === combinedList[riddleNumberActual].answer) {
     correctAnsContainer.style.display = "block";
     correctAnsWrapper.style.display = "block";
     setTimeout(function() {
@@ -119,7 +132,7 @@ function checkAnswer() {
 
     currentScore += 10;
     score.innerHTML = `${currentScore}`;
-    playSound();
+    sound.play()
   }
   else {
     var checkAnswerBtn = document.querySelector("#check-answer-btn");
@@ -128,12 +141,9 @@ function checkAnswer() {
     setTimeout(function() {
       checkAnswerBtn.classList.remove("shake");
     }, 500);
-  }
-}
 
-function playSound() {
-  sound.play();
-  sound.volume = 0.6;
+    userAnswer.forEach((input) => (input.value = ""));
+  }
 }
 
 let hintFlag = false;
@@ -238,4 +248,35 @@ function toggleMusic() {
   // speech.volume = 1; // Speech volume (default is 1)
 
   // speechSynthesis.speak(speech);
+}
+
+function restartGame() {
+  level = 0;
+  riddleNumber = 0;
+  riddleNumberActual = 0;
+  hintNumber = 0;
+  currentScore = 0;
+
+  hintFlag = false;
+  hintsAvalable = 5;
+
+  riddleLevel.innerHTML = `Lv.${level + 1} Riddle.${riddleNumber + 1} `;
+
+  riddleText.innerHTML = `${combinedList[riddleNumberActual].riddle} `;
+
+  hintText.innerHTML = `${combinedList[riddleNumberActual].hint} `;
+
+  score.innerHTML = `${currentScore}`;
+
+  hintUsedCount.innerHTML = `${hintsAvalable}`;
+
+  gameCompleted.style.display = "none";
+  setTimeout(function() {
+    gameCompleted.classList.remove("active");
+  }, 10);
+
+  homePage.classList.toggle("remove");
+
+  let userAnswer = document.querySelectorAll("input");
+  userAnswer.forEach((input) => (input.value = ""));
 }

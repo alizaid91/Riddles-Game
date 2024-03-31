@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="Enter the world of Riddle Quest, a challenging game where you solve riddles to advance through levels. Test your wit and intelligence in this fun adventure!">
+  <link rel="icon" href="android-chrome-192x192 (copy).png" type="image/png">
   <meta name="keywords" content="riddle game, puzzle game, brain teaser, adventure game, fun game">
   <meta name="author" content="Shaikh Ali Zaid">
   <meta property="og:title" content="Riddle Quest - Solve Riddles, Conquer Challenges">
@@ -32,6 +33,8 @@
 
 <body>
 
+  <audio id="victory-sound" src="success-fanfare-trumpets-6185 (copy).mp3"></audio>
+
   <div class="home-page">
     <div class="game-name">
       <h1>Riddle Quest</h1>
@@ -51,7 +54,8 @@
         </li>
         <li>
           <h3>Use Hints to Aid You:</h3>
-          <p>If you find yourself stuck, fear not! You have access to hints to help you along the way. However, you have a limited supply of 5 hints available for the entire game, so use them wisely.</p>
+          <p>If you find yourself stuck, fear not! You have access to hints to help you along the way. However, you have
+            a limited supply of 5 hints available for the entire game, so use them wisely.</p>
         </li>
         <li>
           <h3>Earn Points for Correct Answers:</h3>
@@ -116,6 +120,16 @@
             <button id="next-riddle-btn" onclick="nextRiddle()">Next</button>
             <audio id="tata-sound" src="tada-fanfare-a-6313.mp3"></audio>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="game-completed">
+      <div class="game-completed-content">
+        <div class="game-completed-content-1">
+          <p>CONGRATULATIONS!</p>
+          <p>You have completed all levels.</p>
+          <p>You are a true Riddle Master!</p>
+          <button id="restart-btn" onclick="restartGame()">Restart</button>
         </div>
       </div>
     </div>
